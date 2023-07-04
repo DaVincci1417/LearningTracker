@@ -41,12 +41,13 @@ public class TaskDAO {
     private static List obtenerListaTasks(Result resultados){
         List<Task> tasks = new ArrayList<>();
         for(int fila=0; fila < resultados.size() ; fila++){
+            int codTask = (int) resultados.getValue(fila, "cod_task");
             String nombreTask = (String) resultados.getValue(fila,"nombre_task");
             int codAsignatura = (int) resultados.getValue(fila,"cod_asignatura");
             String tipoTask = (String) resultados.getValue(fila,"tipo_task");
             Date fechaTask = (Date) resultados.getValue(fila,"fecha_task");
 
-            tasks.add(new Task(nombreTask, codAsignatura, tipoTask, fechaTask));
+            tasks.add(new Task(codTask, nombreTask, codAsignatura, tipoTask, fechaTask));
         }
         return tasks;
     }

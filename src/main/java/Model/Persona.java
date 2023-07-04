@@ -2,12 +2,14 @@ package Model;
 
 public abstract class Persona {
     protected String rut;
+
     protected String nombre;
     protected String apellidoP;
     protected String apellidoM;
     protected String correoInstitucional;
     protected String sexo;
     protected String nombreUsuario;
+
     protected String contraseña;
     protected String tipoUsuario;
 
@@ -23,9 +25,6 @@ public abstract class Persona {
         setContraseña(contraseña);
         setTipoUsuario(tipoUsuario);
     }
-    public Persona(){}
-
-    public abstract String getTipo();
 
     //Getters and Setters
     public String getRut() {

@@ -13,6 +13,13 @@ public class Asignatura {
         setSemestre(semestre);
         setRutAcademico(rutAcademico);
     }
+    public Asignatura(int codAsignatura, String nombreAsignatura, int modulo, int semestre, String rutAcademico) {
+        setCodAsignatura(codAsignatura);
+        setNombreAsignatura(nombreAsignatura);
+        setModulo(modulo);
+        setSemestre(semestre);
+        setRutAcademico(rutAcademico);
+    }
 
     public int getCodAsignatura() {
         return codAsignatura;

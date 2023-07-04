@@ -8,11 +8,6 @@ public class Academico extends Persona{
         setDepto(depto);
     }
 
-    @Override
-    public String getTipo() {
-        return "Academico";
-    }
-
     //Getters and Setters
     public String getDepto() {
         return depto;

@@ -9,11 +9,6 @@ public class Ayudante extends Persona{
         setNumeroMatricula(numeroMatricula);
     }
 
-    @Override
-    public String getTipo() {
-        return "Ayudante";
-    }
-
     public String getNumeroMatricula() {
         return numeroMatricula;
     }

@@ -37,12 +37,13 @@ public class AsignaturaDAO {
     private static List<Asignatura> obtenerListaAsignaturas(Result resultados){
         List<Asignatura> asignaturas = new ArrayList<>();
         for(int fila=0; fila < resultados.size() ; fila++){
+            int codAsignatura  = (int) resultados.getValue(fila,"cod_asignatura");
             String nombreAsignatura = (String) resultados.getValue(fila,"nombre_asignatura");
-            int modulo  = (Integer) resultados.getValue(fila,"modulo");
-            int semestre = (Integer) resultados.getValue(fila,"semestre");
+            int modulo  = (int) resultados.getValue(fila,"modulo");
+            int semestre = (int) resultados.getValue(fila,"semestre");
             String rutAcademico = (String) resultados.getValue(fila,"rut_academico");
 
-            asignaturas.add(new Asignatura(nombreAsignatura, modulo, semestre, rutAcademico));
+            asignaturas.add(new Asignatura(codAsignatura, nombreAsignatura, modulo, semestre, rutAcademico));
         }
         return asignaturas;
     }

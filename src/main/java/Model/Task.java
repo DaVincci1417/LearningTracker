@@ -9,13 +9,19 @@ public class Task {
     private String tipoTask;
     private Date fechaTask;
 
-    public Task(String nombreTask, int codAsignatura, String tipoTask, Date fechaTask) {
+    public Task(int codTask,String nombreTask, int codAsignatura, String tipoTask, Date fechaTask){
+        setCodTask(codTask);
         setNombreTask(nombreTask);
         setCodAsignatura(codAsignatura);
         setTipoTask(tipoTask);
         setFechaTask(fechaTask);
     }
-
+    public Task(String nombreTask, int codAsignatura, String tipoTask, Date fechaTask){
+        setNombreTask(nombreTask);
+        setCodAsignatura(codAsignatura);
+        setTipoTask(tipoTask);
+        setFechaTask(fechaTask);
+    }
     public int getCodTask() {
         return codTask;
     }
