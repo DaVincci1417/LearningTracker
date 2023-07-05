@@ -1,5 +1,6 @@
 package Model.Data.DAO;
 
+import Model.Data.DBGenerator;
 import Model.Evento;
 import org.jooq.DSLContext;
 import org.jooq.Field;
@@ -22,19 +23,20 @@ public class EventoDAO {
                 .values(evento.getCodEvento(), evento.getNombreEvento(), evento.getDescripcionEvento(), evento.getFechaEvento())
                 .execute();
     }
-    public static void modificarEvento(DSLContext query, String nombre, String columnaTabla, Object dato){
+    public static void modificarEvento(DSLContext query, Object nombre, String columnaTabla, Object dato){
         query.update(table("Evento")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("cod_evento").eq(nombre)).execute();
     }
-    public static List<Evento> obtenerEvento(DSLContext query, String columnaTabla, String dato){
+    public static List<Evento> obtenerEvento(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(table("Evento")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaEventos(resultados);
     }
-    public static List<Evento> obtenerEventos(DSLContext query){
+    public static List<Evento> obtenerEventos() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Evento")).fetch();
         return obtenerListaEventos(resultados);
     }
-    public static void eliminarEvento(DSLContext query, String nombre){
+    public static void eliminarEvento(DSLContext query, Object nombre){
         Table tablaEvento = table(name("Evento"));
         query.delete(table("Evento")).where(DSL.field("cod_evento").eq(nombre)).execute();
     }

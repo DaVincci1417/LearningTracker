@@ -13,7 +13,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 
 <div class="container-fluid">
     <!-- Page Heading -->
@@ -23,9 +23,9 @@
     </div>
     <p class="mb-4">Asignaturas cursadas y/o cursando al 1-2023.</p>
     <div class="card-header py-3 alert-warning">
-        <h2 class="h4 text-gray-900 mb-4">Se ha agregado la ASIGNATURA con exito.</h2>
+        <h2 class="h4 text-gray-900 mb-4">Se ha AGREGADO la ASIGNATURA con exito.</h2>
     </div>
-    <%@ include file="Listas/listaAsignaturas.jsp"%>
+    <%@ include file="Listas/adm_listaAsignaturas.jsp"%>
 </div>
 
 <%@ include file="ComponentesPrincipales/footer.jsp"%>

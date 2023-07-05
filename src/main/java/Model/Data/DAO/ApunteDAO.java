@@ -1,6 +1,7 @@
 package Model.Data.DAO;
 
 import Model.Apunte;
+import Model.Data.DBGenerator;
 import org.jooq.DSLContext;
 import org.jooq.Field;
 import org.jooq.Result;
@@ -30,13 +31,18 @@ public class ApunteDAO {
         Result resultados = query.select().from(DSL.table("Apunte")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaApuntes(resultados);
     }
-    public static List<Apunte> obtenerApuntes(DSLContext query){
+    public static List<Apunte> obtenerApuntes() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(DSL.table("Apunte")).fetch();
         return obtenerListaApuntes(resultados);
     }
-    public static void eliminarApunte(DSLContext query, String nombre){
+    public static void eliminarApunte(DSLContext query, Object nombre){
         Table tablaApunte = table(name("Apunte"));
         query.delete(DSL.table("Apunte")).where(DSL.field("cod_apunte").eq(nombre)).execute();
+    }
+    public static void eliminarApuntePorAsignatura(DSLContext query, Object nombre){
+        Table tablaTask = table(name("Apunte"));
+        query.delete(DSL.table("Apunte")).where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }
     private static List<Apunte> obtenerListaApuntes(Result resultados){
         List<Apunte> apuntes = new ArrayList<>();

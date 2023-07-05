@@ -9,16 +9,13 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Learning Tracker - FICA</h1>
+        <h1 class="h3 mb-0 text-gray-800">Agregar Asignatura</h1>
     </div>
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h1 class="h4 text-gray-900 mb-4">Nueva Asignatura</h1>
-        </div>
         <div class="card-body">
             <form class="user" action="agregarAsignatura" method="post">
                 <div class="form-group row">

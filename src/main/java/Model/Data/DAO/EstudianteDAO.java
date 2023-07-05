@@ -1,5 +1,6 @@
 package Model.Data.DAO;
 
+import Model.Data.DBGenerator;
 import Model.Estudiante;
 import org.jooq.DSLContext;
 import org.jooq.Field;
@@ -24,7 +25,7 @@ public class EstudianteDAO {
                 )
                 .execute();
     }
-    public static void modificarLibro(DSLContext query, String nombre, String columnaTabla, Object dato){
+    public static void modificarEstudiante(DSLContext query, Object nombre, String columnaTabla, Object dato){
         query.update(DSL.table("Estudiante")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("numero_matricula").eq(nombre)).execute();
     }
@@ -32,7 +33,8 @@ public class EstudianteDAO {
         Result resultados = query.select().from(DSL.table("Estudiante")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaEstudiantes(resultados);
     }
-    public static List<Estudiante> obtenerEstudiantes(DSLContext query){
+    public static List<Estudiante> obtenerEstudiantes() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(DSL.table("Estudiante")).fetch();
         return obtenerListaEstudiantes(resultados);
     }
@@ -43,7 +45,7 @@ public class EstudianteDAO {
     private static List<Estudiante> obtenerListaEstudiantes(Result resultados){
         List<Estudiante> estudiantes = new ArrayList<>();
         for(int fila=0; fila < resultados.size() ; fila++){
-            int numeroMatricula = (int) resultados.getValue(fila,"numero_matricula");
+            String numeroMatricula = (String) resultados.getValue(fila,"numero_matricula");
             String nombreEstudiante = (String) resultados.getValue(fila,"nombre_estudiante");
             String apellidoPaterno = (String) resultados.getValue(fila,"apellido_paterno");
             String apellidoMaterno = (String) resultados.getValue(fila,"apellido_materno");

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "registrarAcademicoServlet", value = "/registrarAcademico")
-public class registrarAcademicoServlet extends HttpServlet {
+public class adm_registrarAcademicoServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {
@@ -26,7 +26,7 @@ public class registrarAcademicoServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher respuesta = request.getRequestDispatcher("/adm_registroAcademico.jsp");
+        RequestDispatcher respuesta = request.getRequestDispatcher("/adm_agregarAcademico.jsp");
         respuesta.forward(request,response);
     }
     @Override
@@ -53,7 +53,7 @@ public class registrarAcademicoServlet extends HttpServlet {
             try {
                 if(agregarAcademico(academico)){
                     req.setAttribute("Academico",academico);
-                    respuesta = req.getRequestDispatcher("/exitoRegistrarAcademico.jsp");
+                    respuesta = req.getRequestDispatcher("/adm_exitoAgregarAcademico.jsp");
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

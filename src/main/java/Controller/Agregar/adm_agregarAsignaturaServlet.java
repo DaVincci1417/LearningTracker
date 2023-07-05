@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "agregarAsignaturaServlet", value = "/agregarAsignatura")
-public class agregarAsignaturaServlet extends HttpServlet {
+public class adm_agregarAsignaturaServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {

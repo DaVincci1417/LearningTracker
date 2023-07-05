@@ -10,16 +10,16 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 
 <div class="container-fluid">
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Estudiantes</h1>
-    <a href="adm_agregarAsignatura.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Agregar Asignatura</a>
+    <a href="adm_agregarEstudiante.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Agregar Estudiante</a>
   </div>
-  <p class="mb-4">Estudiantes matriculados a la fecha: <c:out value="${fecha}"></c:out></p>
-  <%@ include file="Listas/listaAcademicos.jsp"%>
+  <p class="mb-4">Estudiantes con cuenta a la fecha: <c:out value="${fecha}"></c:out></p>
+  <%@ include file="Listas/adm_listaEstudiantes.jsp"%>
 </div>
 
 <%@ include file="ComponentesPrincipales/footer.jsp"%>

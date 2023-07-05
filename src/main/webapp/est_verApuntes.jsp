@@ -11,7 +11,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarEstudiante.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

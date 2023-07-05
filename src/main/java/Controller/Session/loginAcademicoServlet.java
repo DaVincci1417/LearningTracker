@@ -45,12 +45,12 @@ public class loginAcademicoServlet extends HttpServlet{
                     session = req.getSession();
                     session.setAttribute("usuario", academico);
                     session.setAttribute("fecha", fechaActual());
+
                     this.getServletContext().getRequestDispatcher("/acad_panel.jsp").forward(req, resp);
                 }
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-
         }
         respuesta.forward(req,resp);
     }

@@ -12,7 +12,7 @@
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../panelAdministrador.jsp">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adm_panel.jsp">
       <div class="sidebar-brand-icon">
         <i class="fas fa-school"></i>
       </div>
@@ -26,7 +26,7 @@
     </div>
     <!-- Nav Item - Apuntes_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a class="nav-link" href="listarAcademicos">
+      <a class="nav-link" href="adm_verAcademicos.jsp">
         <i class="fas fa-chalkboard-teacher"></i>
         <span>Academicos</span></a>
     </li>
@@ -34,7 +34,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Apuntes_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a class="nav-link" href="listarEstudiantes">
+      <a class="nav-link" href="adm_verEstudiantes.jsp">
         <i class="fas fa-users"></i>
         <span>Estudiantes</span></a>
     </li>
@@ -42,7 +42,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Ramos_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a type="submit" class="nav-link" href="listarAsignaturas">
+      <a type="submit" class="nav-link" href="adm_verAsignaturas.jsp">
         <i class="fas fa-window-restore"></i>
         <span>Asignaturas</span></a>
     </li>
@@ -50,7 +50,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tareas_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a class="nav-link" href="adm_listarEventos">
+      <a class="nav-link" href="adm_verEventos.jsp">
         <i class="fas fa-calendar-alt"></i>
         <span>Eventos</span></a>
     </li>

@@ -11,7 +11,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 
 <div class="container-fluid">
     <!-- Page Heading -->
@@ -19,8 +19,8 @@
         <h1 class="h3 mb-0 text-gray-800">Asignaturas</h1>
         <a href="adm_agregarAsignatura.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Agregar Asignatura</a>
     </div>
-    <p class="mb-4">Asignaturas que impartes a la fecha: <c:out value="${fecha}"></c:out></p>
-    <%@ include file="Listas/listaAsignaturas.jsp"%>
+    <p class="mb-4">Asignaturas creadas a la fecha: <c:out value="${fecha}"></c:out></p>
+    <%@ include file="Listas/adm_listaAsignaturas.jsp"%>
 </div>
 
 <%@ include file="ComponentesPrincipales/footer.jsp"%>

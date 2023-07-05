@@ -33,13 +33,26 @@
         </tr>
         </tfoot>
         <tbody>
-        <c:forEach items="${asignaturas}" var="estudiante">
+        <jsp:useBean class="Model.Data.DAO.AsignaturaDAO" id="asignaturaDAO"></jsp:useBean>
+        <c:forEach items="${asignaturaDAO.obtenerAsignaturas()}" var="asignatura">
           <tr>
-            <td><c:out value="${estudiante.getCodAsignatura()}"></c:out></td>
-            <td><c:out value="${estudiante.getNombreAsignatura()}"></c:out></td>
-            <td><c:out value="${estudiante.getModulo()}"></c:out></td>
-            <td><c:out value="${estudiante.getSemestre()}"></c:out></td>
-            <td><c:out value="${estudiante.getRutAcademico()}"></c:out></td>
+            <td>${asignatura.codAsignatura}</td>
+            <td>${asignatura.nombreAsignatura}</td>
+            <td>${asignatura.modulo}</td>
+            <td>${asignatura.semestre}</td>
+            <td>${asignatura.rutAcademico}</td>
+            <td>
+              <form action="adm_modificarAsignatura" method="get">
+                <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                        name="cod_asignatura" value="${asignatura.codAsignatura}"> Modificar </button>
+              </form>
+            </td>
+            <td>
+              <form action="adm_eliminarAsignatura" method="post">
+                <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                        name="cod_asignatura" value="${asignatura.codAsignatura}"> Eliminar </button>
+              </form>
+            </td>
           </tr>
         </c:forEach>
         </tbody>

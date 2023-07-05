@@ -9,7 +9,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
+<%@ include file="Topbar/topbar.jsp"%>
 <!-- Begin Page Content -->
 <div class="container-fluid">
   <div class="card shadow mb-4">

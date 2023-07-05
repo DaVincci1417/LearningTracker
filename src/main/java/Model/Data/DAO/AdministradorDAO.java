@@ -2,6 +2,7 @@ package Model.Data.DAO;
 
 import Model.Academico;
 import Model.Administrador;
+import Model.Data.DBGenerator;
 import org.jooq.DSLContext;
 import org.jooq.Field;
 import org.jooq.Result;
@@ -31,11 +32,12 @@ public class AdministradorDAO {
         Result resultados = query.select().from(table("Administrador")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaAdministradores(resultados);
     }
-    public static List<Administrador> obtenerAdministradores(DSLContext query){
+    public static List<Administrador> obtenerAdministradores() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Administrador")).fetch();
         return obtenerListaAdministradores(resultados);
     }
-    public static void eliminarAdministrador(DSLContext query, String nombre){
+    public static void eliminarAdministrador(DSLContext query, Object nombre){
         Table tablaAdministrador= table(name("Administrador"));
         query.delete(table("Administrador")).where(DSL.field("rut_administrador").eq(nombre)).execute();
     }

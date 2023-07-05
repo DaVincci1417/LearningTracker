@@ -2,6 +2,7 @@ package Controller.Session;
 
 import Model.Academico;
 import Model.Administrador;
+import Model.Data.DAO.AcademicoDAO;
 import Model.Data.DAO.AdministradorDAO;
 import Model.Data.DAO.EstudianteDAO;
 import Model.Data.DBGenerator;
@@ -17,6 +18,7 @@ import org.jooq.DSLContext;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -43,8 +45,10 @@ public class loginAdministradorServlet extends HttpServlet {
                     HttpSession session;
 
                     session = req.getSession();
+
                     session.setAttribute("usuario", administrador);
                     session.setAttribute("fecha", fechaActual());
+
                     this.getServletContext().getRequestDispatcher("/adm_panel.jsp").forward(req, resp);
                 }
             } catch (ClassNotFoundException e) {

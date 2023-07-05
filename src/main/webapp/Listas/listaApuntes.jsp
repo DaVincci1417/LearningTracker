@@ -33,13 +33,14 @@
         </tr>
         </tfoot>
         <tbody>
-        <c:forEach items="${apuntes}" var="estudiante">
+        <jsp:useBean class="Model.Data.DAO.ApunteDAO" id="apunteDAO"></jsp:useBean>
+        <c:forEach items="${apunteDAO.obtenerApuntes()}" var="apunte">
           <tr>
-            <td><c:out value="${estudiante.getCodApunte()}"></c:out></td>
-            <td><c:out value="${estudiante.getNombreApunte()}"></c:out></td>
-            <td><c:out value="${estudiante.getCodAsignatura()}"></c:out></td>
-            <td><c:out value="${estudiante.getFechaApunte()}"></c:out></td>
-            <td><c:out value="${estudiante.getTextoApunte()}"></c:out></td>
+            <td>${apunte.codApunte}</td>
+            <td>${apunte.nombreApunte}</td>
+            <td>${apunte.codAsignatura}</td>
+            <td>${apunte.fechaApunte}</td>
+            <td>${apunte.textoApunte}</td>
           </tr>
         </c:forEach>
         </tbody>

@@ -10,22 +10,16 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="ComponentesPrincipales/topbar.jsp"%>
-
-
-<%
-  Date fecha = new Date();
-  SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/YYYY");
-%>
+<%@ include file="Topbar/topbar.jsp"%>
 
 <div class="container-fluid">
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Eventos</h1>
-    <a href="acad_agregarTask.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Agregar Task</a>
+    <a href="adm_agregarEvento.jsp" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-sm text-white-50"></i>Agregar Evento</a>
   </div>
   <p class="mb-4">Eventos agregados hasta hoy: <c:out value="${fecha}"></c:out> </p>
-  <%@ include file="Listas/listaTasks.jsp"%>
+  <%@ include file="Listas/adm_listaEventos.jsp"%>
 </div>
 
 <%@ include file="ComponentesPrincipales/footer.jsp"%>

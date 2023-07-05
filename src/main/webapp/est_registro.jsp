@@ -44,7 +44,7 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Datos Personales</h1>
             </div>
-            <form class="user">
+            <form class="user" action="registrarEstudiante" method="post">
               <div class="form-group">
                 <input type="text" class="form-control form-control-user" id="nombre" name="nombre"
                        placeholder="Nombre" required>
@@ -68,40 +68,40 @@
                        placeholder="Correo Institucional" required>
               </div>
               <div class="form-group">
-                <input type="number" class="form-control form-control-user" id="numero_matricula" name="numero_matricula"
+                <input type="text" class="form-control form-control-user" id="numero_matricula" name="numero_matricula"
                        placeholder="N° Matricula" required>
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <select class="custom-select animated--grow-in" id="carrera" name="carrera" required>
                     <option value="" disable selected hidden>Carrera</option>
-                    <option value="plan_comun_ing_civil">Plan Común de Ingenieria Civil</option>
-                    <option value="ing_civil">Ingenieria Civil</option>
-                    <option value="ing_civil_ind">Ingenieria Civil Industrial</option>
-                    <option value="ing_civil_ind_mec">Ingenieria Civil Industrial mención Mecánica</option>
-                    <option value="ing_civil_ind_bio">Ingenieria Civil Industrial mención Bioprocesos</option>
-                    <option value="ing_civil_ind_inf">Ingenieria Civil Industrial mención Informática</option>
-                    <option value="ing_civil_quimica">Ingenieria Civil Química</option>
-                    <option value="ing_civil_fisica">Ingenieria Civil Física</option>
-                    <option value="ing_civil_mecanica">Ingenieria Civil Mecánica</option>
-                    <option value="ing_civil_amb">Ingenieria Civil Ambiental</option>
-                    <option value="ing_civil_electrica">Ingenieria Civil Eléctrica</option>
-                    <option value="ing_civil_electronica">Ingenieria Civil Electrónica</option>
-                    <option value="ing_civil_informatica">Ingenieria Civil Informática</option>
-                    <option value="ing_civil_matematica">Ingenieria Civil Matemática</option>
-                    <option value="ing_civil_telematica">Ingenieria Civil Telemática</option>
-                    <option value="ing_civil_biotec">Ingenieria Civil Biotecnología</option>
-                    <option value="ing_construccion">Ingenieria en Construcción</option>
-                    <option value="ing_informatica">Ingenieria Informatica</option>
-                    <option value="bioquimica">Bioquímica</option>
+                    <option value="Plan Común de Ingenieria Civil">Plan Común de Ingenieria Civil</option>
+                    <option value="Ingenieria Civil">Ingenieria Civil</option>
+                    <option value="Ingenieria Civil Industrial">Ingenieria Civil Industrial</option>
+                    <option value="Ingenieria Civil Industrial mención Mecánica">Ingenieria Civil Industrial mención Mecánica</option>
+                    <option value="Ingenieria Civil Industrial mención Bioprocesos">Ingenieria Civil Industrial mención Bioprocesos</option>
+                    <option value="Ingenieria Civil Industrial mención Informática">Ingenieria Civil Industrial mención Informática</option>
+                    <option value="Ingenieria Civil Química">Ingenieria Civil Química</option>
+                    <option value="Ingenieria Civil Física">Ingenieria Civil Física</option>
+                    <option value="Ingenieria Civil Mecánica">Ingenieria Civil Mecánica</option>
+                    <option value="Ingenieria Civil Ambiental">Ingenieria Civil Ambiental</option>
+                    <option value="Ingenieria Civil Eléctrica">Ingenieria Civil Eléctrica</option>
+                    <option value="Ingenieria Civil Electrónica">Ingenieria Civil Electrónica</option>
+                    <option value="Ingenieria Civil Informática">Ingenieria Civil Informática</option>
+                    <option value="Ingenieria Civil Matemática">Ingenieria Civil Matemática</option>
+                    <option value="Ingenieria Civil Telemática">Ingenieria Civil Telemática</option>
+                    <option value="Ingenieria Civil Biotecnología">Ingenieria Civil Biotecnología</option>
+                    <option value="Ingenieria en Construcción">Ingenieria en Construcción</option>
+                    <option value="Ingenieria Informatica">Ingenieria Informatica</option>
+                    <option value="Bioquímica">Bioquímica</option>
                   </select>
                 </div>
                 <div class="col-sm-6">
                   <select class="custom-select animated--grow-in" id="sexo" name="sexo" required>
                     <option value="" disable selected hidden>Sexo</option>
-                    <option value="tarea">Masculino</option>
-                    <option value="ayudantia">Femenino</option>
-                    <option value="taller">Prefiero no decirlo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="NN">Prefiero no decirlo</option>
                   </select>
                 </div>
               </div>
@@ -122,10 +122,7 @@
                          id="contraseña" name="contraseña" placeholder="Contraseña" required>
                 </div>
               </div>
-
-              <a href="index.jsp" class="btn btn-primary btn-user btn-block">
-                Registrar Cuenta
-              </a>
+              <input type="submit" value="Registrar Academico" class="btn btn-primary btn-user btn-block">
               <hr>
             </form>
             <hr>

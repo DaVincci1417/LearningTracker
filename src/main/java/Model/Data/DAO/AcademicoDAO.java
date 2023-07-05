@@ -1,6 +1,7 @@
 package Model.Data.DAO;
 
 import Model.Academico;
+import Model.Data.DBGenerator;
 import org.jooq.*;
 import org.jooq.impl.DSL;
 
@@ -27,7 +28,8 @@ public class AcademicoDAO {
         Result resultados = query.select().from(table("Academico")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaAcademicos(resultados);
     }
-    public static List<Academico> obtenerAcademicos(DSLContext query){
+    public static List<Academico> obtenerAcademicos() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Academico")).fetch();
         return obtenerListaAcademicos(resultados);
     }

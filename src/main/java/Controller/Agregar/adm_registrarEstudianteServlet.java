@@ -1,7 +1,5 @@
 package Controller.Agregar;
 
-import Model.Academico;
-import Model.Data.DAO.AcademicoDAO;
 import Model.Data.DAO.EstudianteDAO;
 import Model.Data.DBGenerator;
 import Model.Estudiante;
@@ -17,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "registrarEstudianteServlet", value = "/registrarEstudiante")
-public class registrarEstudianteServlet extends HttpServlet {
+public class adm_registrarEstudianteServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {
@@ -28,21 +26,21 @@ public class registrarEstudianteServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher respuesta = request.getRequestDispatcher("/adm_registroAcademico.jsp");
+        RequestDispatcher respuesta = request.getRequestDispatcher("/adm_agregarAcademico.jsp");
         respuesta.forward(request,response);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
-        RequestDispatcher respuesta = req.getRequestDispatcher("/errorRegistrarAcademico.jsp");
-        if(req.getParameter("nombre").length()!=0 || req.getParameter("apellido_paterno").length() != 0 || req.getParameter("apellido_materno").length() != 0
-                || req.getParameter("rut").length() != 0 || req.getParameter("correo_institucional").length() != 0 || req.getParameter("numero_matricula").length() != 0
-                || req.getParameter("carrera").length() != 0|| req.getParameter("sexo").length() != 0 || req.getParameter("nombre_usuario").length() != 0 || req.getParameter("contraseña").length() != 0){
+        RequestDispatcher respuesta = req.getRequestDispatcher("/errorAgregarEstudiante.jsp");
+        if(req.getParameter("nombre").length()!=0 && req.getParameter("apellido_paterno").length() != 0 && req.getParameter("apellido_materno").length() != 0
+                || req.getParameter("rut").length() != 0 && req.getParameter("correo_institucional").length() != 0 && req.getParameter("numero_matricula").length() != 0
+                || req.getParameter("carrera").length() != 0 && req.getParameter("sexo").length() != 0 && req.getParameter("nombre_usuario").length() != 0 && req.getParameter("contraseña").length() != 0){
             String nombre = req.getParameter("nombre");
             String apellidoPaterno = req.getParameter("apellido_paterno");
             String apellidoMaterno = req.getParameter("apellido_materno");
             String rut = req.getParameter("rut");
             String correoInstitucional = req.getParameter("correo_institucional");
-            int numeroMatricula = Integer.parseInt(req.getParameter("numero_matricula"));
+            String numeroMatricula = req.getParameter("numero_matricula");
             String carrera = req.getParameter("carrera");
             String sexo = req.getParameter("sexo");
 
@@ -56,7 +54,7 @@ public class registrarEstudianteServlet extends HttpServlet {
             try {
                 if(agregarEstudiante(estudiante)){
                     req.setAttribute("Estudiante",estudiante);
-                    respuesta = req.getRequestDispatcher("/exitoRegistrarEstudiante.jsp");
+                    respuesta = req.getRequestDispatcher("/adm_exitoRegistrarEstudiante.jsp");
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Learning Tracker</title>
+  <title>Learning Tracker - FICA</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

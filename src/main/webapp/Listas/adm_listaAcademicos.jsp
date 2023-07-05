@@ -23,6 +23,8 @@
           <th>Correo Institucional</th>
           <th>Sexo</th>
           <th>Departamento</th>
+          <th></th>
+          <th></th>
         </tr>
         </thead>
         <tfoot>
@@ -34,18 +36,33 @@
           <th>Correo Institucional</th>
           <th>Sexo</th>
           <th>Departamento</th>
+          <th></th>
+          <th></th>
         </tr>
         </tfoot>
         <tbody>
-        <c:forEach items="${academicos}" var="estudiante">
+        <jsp:useBean class="Model.Data.DAO.AcademicoDAO" id="academicoDAO"></jsp:useBean>
+        <c:forEach items="${academicoDAO.obtenerAcademicos()}" var="academico">
           <tr>
-            <td><c:out value="${estudiante.getRut()}"></c:out></td>
-            <td><c:out value="${estudiante.getNombre()}"></c:out></td>
-            <td><c:out value="${estudiante.getApellidoP()}"></c:out></td>
-            <td><c:out value="${estudiante.getApellidoM()}"></c:out></td>
-            <td><c:out value="${estudiante.getCorreoInstitucional()}"></c:out></td>
-            <td><c:out value="${estudiante.getSexo()}"></c:out></td>
-            <td><c:out value="${estudiante.getDepto()}"></c:out></td>
+            <td>${academico.rut}</td>
+            <td>${academico.nombre}</td>
+            <td>${academico.apellidoP}</td>
+            <td>${academico.apellidoM}</td>
+            <td>${academico.correoInstitucional}</td>
+            <td>${academico.sexo}</td>
+            <td>${academico.depto}</td>
+            <td>
+              <form action="adm_modificarAcademico" method="get">
+                <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                        name="rut" value="${academico.rut}"> Modificar </button>
+              </form>
+            </td>
+            <td>
+              <form action="adm_eliminarAcademico" method="post">
+                <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                        name="rut" value="${academico.rut}"> Eliminar </button>
+              </form>
+            </td>
           </tr>
         </c:forEach>
         </tbody>

@@ -1,6 +1,7 @@
 package Model.Data.DAO;
 
 import Model.Asignatura;
+import Model.Data.DBGenerator;
 import org.jooq.*;
 import org.jooq.impl.DSL;
 
@@ -18,19 +19,20 @@ public class AsignaturaDAO {
                 .values(asignatura.getCodAsignatura(), asignatura.getNombreAsignatura(), asignatura.getModulo(), asignatura.getSemestre(), asignatura.getRutAcademico())
                 .execute();
     }
-    public static void modificarAsignatura(DSLContext query, String nombre, String columnaTabla, Object dato){
+    public static void modificarAsignatura(DSLContext query, Object nombre, String columnaTabla, Object dato){
         query.update(table("Asignatura")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }
-    public static List<Asignatura> obtenerAsignatura(DSLContext query, String columnaTabla, String dato){
+    public static List<Asignatura> obtenerAsignatura(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(table("Asignatura")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaAsignaturas(resultados);
     }
-    public static List<Asignatura> obtenerAsignaturas(DSLContext query){
+    public static List<Asignatura> obtenerAsignaturas() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Asignatura")).fetch();
         return obtenerListaAsignaturas(resultados);
     }
-    public static void eliminarAsignatura(DSLContext query, String nombre){
+    public static void eliminarAsignatura(DSLContext query, Object nombre){
         Table tablaAsignatura= table(name("Asignatura"));
         query.delete(table("Asignatura")).where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }

@@ -33,13 +33,14 @@
         </tr>
         </tfoot>
         <tbody>
-        <c:forEach items="${tasks}" var="estudiante">
+        <jsp:useBean class="Model.Data.DAO.TaskDAO" id="taskDAO"></jsp:useBean>
+        <c:forEach items="${taskDAO.obtenerEventos()}" var="task">
           <tr>
-            <td><c:out value="${estudiante.getCodTask()}"></c:out></td>
-            <td><c:out value="${estudiante.getNombreTask()}"></c:out></td>
-            <td><c:out value="${estudiante.getCodAsignatura()}"></c:out></td>
-            <td><c:out value="${estudiante.getTipoTask()}"></c:out></td>
-            <td><c:out value="${estudiante.getFechaTask()}"></c:out></td>
+            <td>${task.codTask}</td>
+            <td>${task.nombreTask}</td>
+            <td>${task.codAsignaturas}</td>
+            <td>${task.tipoTask}</td>
+            <td>${task.fechaTask}</td>
           </tr>
         </c:forEach>
         </tbody>

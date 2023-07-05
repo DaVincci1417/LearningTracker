@@ -12,7 +12,7 @@
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../Vista_Administrador/panelAdministrador.jsp">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="acad_panel.jsp">
       <div class="sidebar-brand-icon">
         <i class="fas fa-school"></i>
       </div>
@@ -25,7 +25,7 @@
       Gestión
     <!-- Nav Item - Ramos_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a type="submit" class="nav-link" href="listarAsignaturas">
+      <a type="submit" class="nav-link" href="acad_verAsignaturas.jsp">
         <i class="fas fa-window-restore"></i>
         <span>Asignaturas</span></a>
     </li>
@@ -34,7 +34,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tareas_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a class="nav-link" href="listarEventos">
+      <a class="nav-link" href="acad_verEventos.jsp">
         <i class="fas fa-calendar-alt"></i>
         <span>Eventos</span></a>
     </li>

@@ -1,5 +1,6 @@
 package Model.Data.DAO;
 
+import Model.Data.DBGenerator;
 import Model.Task;
 import org.jooq.DSLContext;
 import org.jooq.Field;
@@ -30,13 +31,18 @@ public class TaskDAO {
         Result resultados = query.select().from(DSL.table("Task")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaTasks(resultados);
     }
-    public static List obtenerTasks(DSLContext query){
+    public static List obtenerTasks() throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(DSL.table("Task")).fetch();
         return obtenerListaTasks(resultados);
     }
-    public static void eliminarTask(DSLContext query, String nombre){
+    public static void eliminarTask(DSLContext query, Object nombre){
         Table tablaTask = table(name("Task"));
         query.delete(DSL.table("Task")).where(DSL.field("cod_task").eq(nombre)).execute();
+    }
+    public static void eliminarTaskPorAsignatura(DSLContext query, Object nombre){
+        Table tablaTask = table(name("Task"));
+        query.delete(DSL.table("Task")).where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }
     private static List obtenerListaTasks(Result resultados){
         List<Task> tasks = new ArrayList<>();
