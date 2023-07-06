@@ -33,7 +33,6 @@ public class adm_modificarAcademicoServlet extends HttpServlet {
         if(req.getParameter("rut").length() != 0){
             String rut = req.getParameter("rut");
             try {
-                obtenerAcademico(rut);
                 req.getSession().setAttribute("academico", obtenerAcademico(rut));
                 response.sendRedirect("adm_modificarAcademico.jsp");
             } catch (ClassNotFoundException e) {

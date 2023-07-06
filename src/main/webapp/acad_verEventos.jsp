@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="ComponentesPrincipales/head.jsp"%>
-<%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="Topbar/topbar.jsp"%>
+<%@ include file="Sidebar/sidebarAcademico.jsp"%>
+<%@ include file="Topbar/topbarAcademico.jsp"%>
 
 <div class="container-fluid">
     <!-- Page Heading -->
@@ -16,7 +16,7 @@
         <h1 class="h3 mb-0 text-gray-800">Eventos</h1>
     </div>
     <p class="mb-4">Eventos agregados hasta hoy: <c:out value="${fecha}"></c:out> </p>
-    <%@ include file="Listas/adm_listaEventos.jsp"%>
+    <%@ include file="Listas/usuario_listaEventos.jsp"%>
 </div>
 
 <%@ include file="ComponentesPrincipales/footer.jsp"%>

@@ -3,8 +3,10 @@ package Controller.Session;
 import Model.Academico;
 import Model.Data.DAO.AcademicoDAO;
 import Model.Data.DAO.EstudianteDAO;
+import Model.Data.DAO.EventoDAO;
 import Model.Data.DBGenerator;
 import Model.Estudiante;
+import Model.Evento;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -43,6 +45,7 @@ public class loginEstudianteServlet extends HttpServlet {
 
                     session = req.getSession();
                     session.setAttribute("usuario", estudiante);
+                    session.setAttribute("evento", ultimoEvento(obtenerEventos(req)));
                     session.setAttribute("fecha", fechaActual());
                     this.getServletContext().getRequestDispatcher("/est_panel.jsp").forward(req, resp);
                 }
@@ -71,4 +74,12 @@ public class loginEstudianteServlet extends HttpServlet {
         return formatoFecha.format(fecha);
     }
 
+    private List<Evento> obtenerEventos(HttpServletRequest req) throws ClassNotFoundException {
+        List<Evento> eventos = EventoDAO.obtenerEventos();
+        return  eventos;
+    }
+    private Evento ultimoEvento(List<Evento> eventos){
+        int cantidadEventos = eventos.size();
+        return eventos.get(eventos.size() - 1);
+    }
 }

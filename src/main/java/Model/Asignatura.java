@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 public class Asignatura {
     private int codAsignatura;
     private String nombreAsignatura;

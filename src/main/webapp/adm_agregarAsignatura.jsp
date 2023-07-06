@@ -9,7 +9,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="Topbar/topbar.jsp"%>
+<%@ include file="Topbar/topbarAdministrador.jsp"%>
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

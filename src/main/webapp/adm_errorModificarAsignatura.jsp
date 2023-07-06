@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="Topbar/topbar.jsp"%>
+<%@ include file="Topbar/topbarAdministrador.jsp"%>
 
 <% Asignatura asignatura = (Asignatura) request.getSession().getAttribute("asignatura"); %>
 

@@ -25,6 +25,7 @@ public abstract class Persona {
         setContraseña(contraseña);
         setTipoUsuario(tipoUsuario);
     }
+    public Persona(){}
 
     //Getters and Setters
     public String getRut() {

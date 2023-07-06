@@ -27,11 +27,16 @@ public class TaskDAO {
         query.update(DSL.table("Task")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("cod_task").eq(nombre)).execute();
     }
-    public static List obtenerTask(DSLContext query, String columnaTabla, String dato){
+    public static List<Task> obtenerTask(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(DSL.table("Task")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaTasks(resultados);
     }
-    public static List obtenerTasks() throws ClassNotFoundException {
+    public static List<Task> obtenerTaskPorAsignatura(Object dato) throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
+        Result resultados = query.select().from(DSL.table("Task")).where(DSL.field("cod_asignatura").eq(dato)).fetch();
+        return obtenerListaTasks(resultados);
+    }
+    public static List<Task> obtenerTasks() throws ClassNotFoundException {
         DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(DSL.table("Task")).fetch();
         return obtenerListaTasks(resultados);
@@ -44,7 +49,7 @@ public class TaskDAO {
         Table tablaTask = table(name("Task"));
         query.delete(DSL.table("Task")).where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }
-    private static List obtenerListaTasks(Result resultados){
+    private static List<Task> obtenerListaTasks(Result resultados){
         List<Task> tasks = new ArrayList<>();
         for(int fila=0; fila < resultados.size() ; fila++){
             int codTask = (int) resultados.getValue(fila, "cod_task");

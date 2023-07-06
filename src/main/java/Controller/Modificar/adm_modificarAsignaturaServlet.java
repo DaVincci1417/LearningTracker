@@ -30,7 +30,6 @@ public class adm_modificarAsignaturaServlet extends HttpServlet{
         if(req.getParameter("cod_asignatura").length() != 0){
             int codAsignatura = Integer.parseInt(req.getParameter("cod_asignatura"));
             try {
-                obtenerAsignatura(codAsignatura);
                 req.getSession().setAttribute("asignatura", obtenerAsignatura(codAsignatura));
                 response.sendRedirect("adm_modificarAsignatura.jsp");
             } catch (ClassNotFoundException e) {

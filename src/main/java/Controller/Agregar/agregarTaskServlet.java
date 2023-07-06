@@ -27,11 +27,6 @@ public class agregarTaskServlet extends HttpServlet {
         }
     }
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher respuesta = request.getRequestDispatcher("/acad_agregarTask.jsp");
-        respuesta.forward(request,response);
-    }
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
         RequestDispatcher respuesta = req.getRequestDispatcher("/acad_errorAgregarTask.jsp");
         if(req.getParameter("nombre_tarea").length()!=0 || req.getParameter("cod_asignatura").length() != 0 || req.getParameter("tipo_tarea").length() != 0

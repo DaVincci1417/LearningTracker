@@ -23,15 +23,6 @@
     <!-- Heading -->
     <div class="sidebar-heading">
       Gestión
-    <!-- Nav Item - Ramos_Semestre Collapse Menu -->
-    <li class="nav-item active">
-      <a type="submit" class="nav-link" href="acad_verAsignaturas.jsp">
-        <i class="fas fa-window-restore"></i>
-        <span>Asignaturas</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
     <!-- Nav Item - Tareas_Semestre Collapse Menu -->
     <li class="nav-item active">
       <a class="nav-link" href="acad_verEventos.jsp">

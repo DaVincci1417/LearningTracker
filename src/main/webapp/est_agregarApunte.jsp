@@ -9,7 +9,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarEstudiante.jsp"%>
-<%@ include file="Topbar/topbar.jsp"%>
+<%@ include file="Topbar/topbarEstudiante.jsp"%>
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->

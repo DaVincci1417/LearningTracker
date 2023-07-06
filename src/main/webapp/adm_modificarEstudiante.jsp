@@ -9,7 +9,7 @@
 
 <%@ include file="ComponentesPrincipales/head.jsp"%>
 <%@ include file="Sidebar/sidebarAdministrador.jsp"%>
-<%@ include file="Topbar/topbar.jsp"%>
+<%@ include file="Topbar/topbarAdministrador.jsp"%>
 
 <% Estudiante estudiante = (Estudiante) request.getSession().getAttribute("estudiante"); %>
 

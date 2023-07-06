@@ -36,7 +36,6 @@ public class adm_modificarEventoServlet extends HttpServlet {
         if(req.getParameter("cod_evento").length() != 0){
             int codEvento = Integer.parseInt(req.getParameter("cod_evento"));
             try {
-                obtenerEvento(codEvento);
                 req.getSession().setAttribute("evento", obtenerEvento(codEvento));
                 response.sendRedirect("adm_modificarEvento.jsp");
             } catch (ClassNotFoundException e) {

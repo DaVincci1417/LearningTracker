@@ -7,6 +7,7 @@ public class Academico extends Persona{
         super(rut, nombre, apellidoP, apellidoM, correoInstitucional, sexo, nombreUsuario, contraseña, tipoUsuario);
         setDepto(depto);
     }
+    public Academico(){}
 
     //Getters and Setters
     public String getDepto() {

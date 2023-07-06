@@ -33,7 +33,6 @@ public class adm_modificarEstudianteServlet extends HttpServlet {
         if (req.getParameter("numero_matricula").length() != 0) {
             String numeroMatricula = req.getParameter("numero_matricula");
             try {
-                obtenerEstudiante(numeroMatricula);
                 req.getSession().setAttribute("estudiante", obtenerEstudiante(numeroMatricula));
                 response.sendRedirect("adm_modificarEstudiante.jsp");
             } catch (ClassNotFoundException e) {

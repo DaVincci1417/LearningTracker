@@ -24,7 +24,7 @@ public class AcademicoDAO {
         query.update(table("Academico")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("rut").eq(nombre)).execute();
     }
-    public static List<Academico> obtenerAcademico(DSLContext query, String columnaTabla, String dato){
+    public static List<Academico> obtenerAcademico(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(table("Academico")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaAcademicos(resultados);
     }
