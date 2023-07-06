@@ -36,7 +36,7 @@ public class loginAdministradorServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher respuesta = req.getRequestDispatcher("/errorRegistrarAcademico.jsp");
+        RequestDispatcher respuesta = req.getRequestDispatcher("/errorLoginAdministrador.jsp");
         if(req.getParameter("rutLoginAdministrador").length()!=0 && req.getParameter("contraseñaAdministrador").length() != 0){
             try {
                 if(obtenerAdministrador(req) == null){

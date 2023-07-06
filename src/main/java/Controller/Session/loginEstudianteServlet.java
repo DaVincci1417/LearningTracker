@@ -33,7 +33,7 @@ public class loginEstudianteServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher respuesta = req.getRequestDispatcher("/errorRegistrarAcademico.jsp");
+        RequestDispatcher respuesta = req.getRequestDispatcher("/errorLoginEstudiante.jsp");
         if(req.getParameter("matriculaLogin").length()!=0 && req.getParameter("contraseñaEstudiante").length() != 0){
             try {
                 if(obtenerEstudiante(req) == null){

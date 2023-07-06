@@ -55,13 +55,12 @@ public class adm_agregarAsignaturaServlet extends HttpServlet {
         respuesta.forward(req,resp);
     }
     private boolean agregarAsignatura(Asignatura asignatura) throws ClassNotFoundException {
-        DSLContext query= DBGenerator.conectarBD("learning_tracker");
-        List<Asignatura> asignaturas = AsignaturaDAO.obtenerAsignatura(query,"cod_asignatura", Integer.toString(asignatura.getCodAsignatura()));
+        List<Asignatura> asignaturas = AsignaturaDAO.obtenerAsignatura("cod_asignatura", Integer.toString(asignatura.getCodAsignatura()));
         if(asignaturas.size()!=0){
             return false;
         }
         else{
-            AsignaturaDAO.agregarAsignatura(query,asignatura);
+            AsignaturaDAO.agregarAsignatura(asignatura);
             return true;
         }
     }

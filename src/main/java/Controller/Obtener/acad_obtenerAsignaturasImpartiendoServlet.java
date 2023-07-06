@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Obtener;
 
 import Model.Academico;
 import Model.Asignatura;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "acad_obtenerAsignaturasImpartidasServlet", value = "/acad_obtenerAsignaturasImpartidas")
-public class acad_obtenerAsignaturasImpartidasServlet extends HttpServlet{
+public class acad_obtenerAsignaturasImpartiendoServlet extends HttpServlet{
     @Override
     public void init() throws ServletException {
         try {
@@ -32,7 +32,7 @@ public class acad_obtenerAsignaturasImpartidasServlet extends HttpServlet{
             try {
                 req.getSession().setAttribute("academico", obtenerAcademico(rut));
                 req.getSession().setAttribute("asignaturas", obtenerAsignaturas());
-                response.sendRedirect("acad_verAsignaturas.jsp");
+                response.sendRedirect("acad_verAsignaturasImpartiendo.jsp");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }

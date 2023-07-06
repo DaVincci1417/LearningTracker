@@ -31,7 +31,7 @@ public class InscripcionDAO {
         Result resultados = query.select().from(table("Inscripcion")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaInscripcion(resultados);
     }
-    public static List<Inscripcion> obtenerAcademicos() throws ClassNotFoundException {
+    public static List<Inscripcion> obtenerInscripciones() throws ClassNotFoundException {
         DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Inscripcion")).fetch();
         return obtenerListaInscripcion(resultados);

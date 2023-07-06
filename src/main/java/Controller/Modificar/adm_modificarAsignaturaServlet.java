@@ -67,8 +67,7 @@ public class adm_modificarAsignaturaServlet extends HttpServlet{
         respuesta.forward(req,resp);
     }
     private Asignatura obtenerAsignatura(int codAsignatura) throws ClassNotFoundException {
-        DSLContext query= DBGenerator.conectarBD("learning_tracker");
-        return  AsignaturaDAO.obtenerAsignatura(query,"cod_asignatura", codAsignatura).get(0);
+        return  AsignaturaDAO.obtenerAsignatura("cod_asignatura", codAsignatura).get(0);
     }
     private void modificarAsignatura(Asignatura asignatura, String columnaEditar, Object nuevoDato) throws ClassNotFoundException {
         DSLContext query= DBGenerator.conectarBD("learning_tracker");

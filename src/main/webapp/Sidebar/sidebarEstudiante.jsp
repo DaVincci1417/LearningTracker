@@ -35,19 +35,9 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Tareas_Semestre Collapse Menu -->
-    <li class="nav-item active">
-      <a class="nav-link" href="est_verTasks.jsp">
-        <i class="fas fa-book-open"></i>
-        <span>Tasks</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
     <!-- Nav Item - Ramos_Semestre Collapse Menu -->
     <li class="nav-item active">
-      <a type="submit" class="nav-link" href="est_verAsignaturas.jsp">
+      <a type="submit" class="nav-link" href="est_verTodasAsignaturas.jsp">
         <i class="fas fa-window-restore"></i>
         <span>Asignaturas</span></a>
     </li>

@@ -78,7 +78,7 @@
             <div class="col mr-2">
               <form action="acad_obtenerAsignaturasImpartidas" method="get">
                 <button type="submit" class="d-inline btn btn-sm btn-primary shadow-sm"
-                        name="rut" value="${usuario.rut}">Asignaturas</button>
+                        name="rut" value="${usuario.rut}">Asignaturas Impartiendo</button>
               </form>
             </div>
           </div>

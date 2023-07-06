@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Obtener;
 
 import Model.*;
 import Model.Data.DAO.*;
@@ -40,9 +40,7 @@ public class acad_obtenerAsignaturaServlet extends HttpServlet{
     }
 
     private Asignatura obtenerAsignatura(int codAsignatura) throws ClassNotFoundException {
-        DSLContext query= DBGenerator.conectarBD("learning_tracker");
-
-        return AsignaturaDAO.obtenerAsignatura(query, "cod_asignatura", codAsignatura).get(0);
+        return AsignaturaDAO.obtenerAsignatura("cod_asignatura", codAsignatura).get(0);
     }
     private List<Inscripcion> obtenerInscripciones(int codAsignatura) throws ClassNotFoundException {
         DSLContext query= DBGenerator.conectarBD("learning_tracker");

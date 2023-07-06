@@ -12,7 +12,8 @@ import static org.jooq.impl.DSL.*;
 
 
 public class AsignaturaDAO {
-    public static void agregarAsignatura(DSLContext query, Asignatura asignatura){
+    public static void agregarAsignatura(Asignatura asignatura) throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Table tablaAsignatura = table(name("Asignatura"));
         Field[] columnas = tablaAsignatura.fields("cod_asignatura","nombre_asignatura","modulo","semestre","rut_academico");
         query.insertInto(tablaAsignatura, columnas[0], columnas[1], columnas[2], columnas[3], columnas[4])
@@ -23,7 +24,8 @@ public class AsignaturaDAO {
         query.update(table("Asignatura")).set(DSL.field(columnaTabla),dato).
                 where(DSL.field("cod_asignatura").eq(nombre)).execute();
     }
-    public static List<Asignatura> obtenerAsignatura(DSLContext query, String columnaTabla, Object dato){
+    public static List<Asignatura> obtenerAsignatura(String columnaTabla, Object dato) throws ClassNotFoundException {
+        DSLContext query = DBGenerator.conectarBD("learning_tracker");
         Result resultados = query.select().from(table("Asignatura")).where(DSL.field(columnaTabla).eq(dato)).fetch();
         return obtenerListaAsignaturas(resultados);
     }

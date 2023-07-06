@@ -10,6 +10,9 @@ public class Estudiante extends Persona{
         setCarrera(carrera);
     }
 
+    public Estudiante(){
+    }
+
     //Getters and Setters
     public String getNumeroMatricula() {
         return numeroMatricula;
