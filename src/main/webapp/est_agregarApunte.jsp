@@ -30,7 +30,7 @@
                         <input type="text" class="form-control form-control-user" id="cod_asignatura" name="cod_asignatura" placeholder="Codigo Asignatura" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-user" id="fecha_apunte" name="fecha_apunte" placeholder="Fecha" required>
+                        <input type="date" class="form-control form-control-user" id="fecha_apunte" name="fecha_apunte" placeholder="Fecha" required>
                     </div>
                 </div>
                 <div class="form-group ">

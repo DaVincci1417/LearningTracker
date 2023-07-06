@@ -47,12 +47,13 @@ public class ApunteDAO {
     private static List<Apunte> obtenerListaApuntes(Result resultados){
         List<Apunte> apuntes = new ArrayList<>();
         for(int fila=0; fila < resultados.size() ; fila++){
+            int codApunte = (int) resultados.getValue(fila,"cod_apunte");
             String nombreApunte = (String) resultados.getValue(fila,"nombre_apunte");
             int codAsignatura = (int) resultados.getValue(fila,"cod_asignatura");
             Date fechaApunte = (Date) resultados.getValue(fila,"fecha_apunte");
             String textoApunte = (String) resultados.getValue(fila,"texto_apunte");
 
-            apuntes.add(new Apunte(nombreApunte, codAsignatura, fechaApunte, textoApunte));
+            apuntes.add(new Apunte(codApunte, nombreApunte, codAsignatura, fechaApunte, textoApunte));
         }
         return apuntes;
     }

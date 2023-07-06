@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @WebServlet(name = "agregarTaskServlet", value = "/agregarTask")
-public class agregarTaskServlet extends HttpServlet {
+public class acad_agregarTaskServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {

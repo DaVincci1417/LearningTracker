@@ -15,10 +15,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 @WebServlet(name = "agregarApunteServlet", value = "/agregarApunte")
-public class agregarApunteServlet extends HttpServlet {
+public class est_agregarApunteServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         try {
@@ -63,13 +62,7 @@ public class agregarApunteServlet extends HttpServlet {
     }
     private boolean agregarApunte(Apunte apunte) throws ClassNotFoundException {
         DSLContext query= DBGenerator.conectarBD("learning_tracker");
-        List<Apunte> apuntes = ApunteDAO.obtenerApunte(query,"cod_apunte", Integer.toString(apunte.getCodApunte()));
-        if(apuntes.size()!=0){
-            return false;
-        }
-        else{
-            ApunteDAO.agregarApunte(query,apunte);
-            return true;
-        }
+        ApunteDAO.agregarApunte(query,apunte);
+        return true;
     }
 }

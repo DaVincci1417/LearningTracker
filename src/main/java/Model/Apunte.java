@@ -15,6 +15,13 @@ public class Apunte {
         setFechaApunte(fechaApunte);
         setTextoApunte(textoApunte);
     }
+    public Apunte(int codApunte, String nombreApunte, int codAsignatura, Date fechaApunte, String textoApunte) {
+        setCodApunte(codApunte);
+        setNombreApunte(nombreApunte);
+        setCodAsignatura(codAsignatura);
+        setFechaApunte(fechaApunte);
+        setTextoApunte(textoApunte);
+    }
 
     public int getCodApunte() {
         return codApunte;
